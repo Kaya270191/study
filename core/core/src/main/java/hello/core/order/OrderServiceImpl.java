@@ -2,8 +2,8 @@ package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
 
-import hello.core.member.Member;
-import hello.core.member.MemberRepository;
+import hello.core.order.member.Member;
+import hello.core.order.member.MemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 
@@ -24,5 +24,10 @@ public class OrderServiceImpl implements OrderService {
 
         return new Order(memberId, itemName, itemPrice, discountPrice); //최종 생성된 주문을 반환
 
+    }
+
+    //테스트용
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
     }
 }

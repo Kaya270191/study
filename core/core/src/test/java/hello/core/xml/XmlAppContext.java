@@ -1,5 +1,5 @@
 package hello.core.xml;
-import hello.core.member.MemberService;
+import hello.core.order.member.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
