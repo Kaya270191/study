@@ -1,7 +1,7 @@
 package hello.core.singleton;
 
 import hello.core.AppConfig;
-import hello.core.order.member.MemberService;
+import hello.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,12 +22,11 @@ public class SingletonTest {
         MemberService memberService2 = appConfig.memberService();
 
         //3. 참조값이 다른 것을 확인
-        System.out.println("memberService1 = " + memberService1);
-        System.out.println("memberService2 = " + memberService2);
+        System.out.println("순수한 DI 컨테이너 memberService1 = " + memberService1);
+        System.out.println("순수한 DI 컨테이너 memberService2 = " + memberService2);
 
         //멤버서비스1 != 멤버서비스2
         Assertions.assertThat(memberService1).isNotSameAs(memberService2);
-
     }
 
     @Test
@@ -36,8 +35,8 @@ public class SingletonTest {
         SingletonService singletonService1 = SingletonService.getInstance();
         SingletonService singletonService2 = SingletonService.getInstance();
 
-        System.out.println("singletonService1 = " + singletonService1);
-        System.out.println("singletonService2 = " + singletonService2);
+        System.out.println("싱글톤 패턴 singletonService1 = " + singletonService1);
+        System.out.println("싱글톤 패턴 singletonService2 = " + singletonService2);
 
         Assertions.assertThat(singletonService1).isSameAs(singletonService2);
 
@@ -54,14 +53,10 @@ public class SingletonTest {
         MemberService memberService2 = ac.getBean("memberService", MemberService.class);
 
         //3. 참조값이 다른 것을 확인
-        System.out.println("memberService1 = " + memberService1);
-        System.out.println("memberService2 = " + memberService2);
+        System.out.println("싱글톤 컨테이너 memberService1 = " + memberService1);
+        System.out.println("싱글톤 컨테이너 memberService2 = " + memberService2);
 
         //멤버서비스1 != 멤버서비스2
         Assertions.assertThat(memberService1).isSameAs(memberService2);
-
     }
-
-
-
 }

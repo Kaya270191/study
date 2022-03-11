@@ -21,7 +21,4 @@ public class SingletonService {
     public static void main(String[] args) {
         SingletonService singletonService = new SingletonService();
     }
-
-
-
 }
