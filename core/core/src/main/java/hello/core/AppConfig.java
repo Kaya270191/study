@@ -33,6 +33,7 @@ public class AppConfig { //실제 동작에 필요한 구현 객체 생성
     public OrderService orderService(){//생성한 객체 인스턴스의 참조(레퍼런스)를 생성자를 통해서 주입(연결)
         System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), new FixDiscountPolicy());
+
     }
 
     @Bean

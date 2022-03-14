@@ -17,7 +17,6 @@ public class OrderServiceTest {
     public void beforeEach(){
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
-        orderService = appConfig.orderService();
     }
 
     @Test
@@ -26,10 +25,8 @@ public class OrderServiceTest {
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
-        Order order = orderService.createOrder(memberId, "itemA", 10000);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+//        Order order = orderService.createOrder(memberId, "itemA", 10000);
+//        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
 
     }
-
-
 }
