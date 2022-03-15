@@ -1,4 +1,4 @@
-package hello.core.lifecycle;
+package hello.core.beanfind.lifecycle;
 
 
 import javax.annotation.PostConstruct;
