@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @Setter
 public class Book extends Item {
     private String author;
-    private int asbn;
+    private String isbn;
 }
 
 
