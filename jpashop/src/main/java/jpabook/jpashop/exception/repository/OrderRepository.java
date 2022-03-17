@@ -1,4 +1,4 @@
-package jpabook.jpashop.repository;
+package jpabook.jpashop.exception.repository;
 
 import jpabook.jpashop.domain.Order;
 import lombok.RequiredArgsConstructor;
