@@ -18,9 +18,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final OrderService orderService;
-    private final MemberService memberService;
-    private final ItemService itemService;
+    private final OrderService orderService; //오더
+    private final MemberService memberService; //고객
+    private final ItemService itemService; //상품
 
     @GetMapping("/order")
     public String createForm(Model model) {

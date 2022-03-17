@@ -24,4 +24,6 @@ public class Delivery {
     private DeliveryStatus status; //READY, COMP
 
 
+    public void setAddress(org.apache.tomcat.jni.Address address) {
+    }
 }
