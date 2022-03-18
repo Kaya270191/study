@@ -1,0 +1,23 @@
+server:
+  port: 8030
+
+spring:
+  datasource:
+#    url: jdbc:mariadb://localhost:3306/itemlist
+    url: jdbc:mariadb://localhost:3306/bootex
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace

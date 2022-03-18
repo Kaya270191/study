@@ -2,10 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header" />
 <body>
+<<<<<<< HEAD
 
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader"/>
 
+=======
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
     <div>
         <table class="table table-striped">
             <thead>
@@ -24,12 +29,18 @@
                 <td th:text="${item.price}"></td>
                 <td th:text="${item.stockQuantity}"></td>
                 <td>
+<<<<<<< HEAD
                     <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>
+=======
+                    <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}"
+                       class="btn btn-primary" role="button">수정</a>
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
 
     <div th:replace="fragments/footer :: footer"/>
 
@@ -37,3 +48,9 @@
 
 </body>
 </html>
+=======
+    <div th:replace="fragments/footer :: footer"/>
+</div> <!-- /container -->
+</body>
+</html>
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2

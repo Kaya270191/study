@@ -1,11 +1,16 @@
 package jpabook.jpashop.controller;
 
 import jpabook.jpashop.domain.item.Book;
+<<<<<<< HEAD
+=======
+import jpabook.jpashop.domain.item.Item;
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
 import jpabook.jpashop.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,14 +19,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 public class ItemController {
 
+=======
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
+
+@Controller
+@RequiredArgsConstructor
+public class ItemController {
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
     private final ItemService itemService;
 
     public String createForm(Model model){
         model.addAttribute("form", new BookForm());
+<<<<<<< HEAD
         return "item/createItemForm";
     }
 
     @PostMapping("/items/new")
+=======
+        return "items/createItemForm";
+    }
+    @PostMapping
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
     public String create(BookForm form){
         Book book = new Book();
         book.setName(form.getName());
@@ -31,6 +51,7 @@ public class ItemController {
         book.setIsbn(form.getIsbn());
 
         itemService.saveItem(book);
+<<<<<<< HEAD
         return "redirect:/";
     }
 
@@ -61,3 +82,15 @@ public class ItemController {
 }
 
 
+=======
+        return "redirect:/items";
+    }
+
+    @GetMapping
+    public String list(Model model){
+        List<Item> items = itemService.findItem();
+        model.addAttribute("items", items);
+        return "items/itemList";
+    }
+}
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2

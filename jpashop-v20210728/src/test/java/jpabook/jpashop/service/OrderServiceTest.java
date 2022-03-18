@@ -25,7 +25,8 @@ import static org.junit.Assert.*;
 public class OrderServiceTest {
 
     @Autowired EntityManager em;
-    @Autowired OrderService orderService;
+    @Autowired
+    OrderService orderService;
     @Autowired OrderRepository orderRepository;
 
     @Test

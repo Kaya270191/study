@@ -2,28 +2,36 @@ package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.*;
 import jpabook.jpashop.domain.item.Item;
+<<<<<<< HEAD
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.repository.OrderRepository;
 
+=======
+import jpabook.jpashop.exception.repository.ItemRepository;
+import jpabook.jpashop.exception.repository.MemberRepository;
+import jpabook.jpashop.exception.repository.OrderRepository;
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class OrderService {
 
-    private final OrderRepository orderRepository;
     private final MemberRepository memberRepository;
+    private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
+<<<<<<< HEAD
 
     /**
      * 주문
      */
+=======
+    /** 주문 */
+>>>>>>> 5c0a5fd091b0b70e4e233e922878a5005cbe6ec2
     @Transactional
     public Long order(Long memberId, Long itemId, int count) {
 
@@ -33,7 +41,7 @@ public class OrderService {
 
         //배송정보 생성
         Delivery delivery = new Delivery();
-        delivery.setAddress(member.getAddress());
+//        delivery.setAddress(member.getAddress());
         delivery.setStatus(DeliveryStatus.READY);
 
         //주문상품 생성
