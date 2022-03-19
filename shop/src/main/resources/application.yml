@@ -2,12 +2,18 @@ server:
   port: 8030
 
 spring:
+  sql:
+    init:
+      data-locations:
+        - classpath: data.sql
+
   datasource:
 #    url: jdbc:mariadb://localhost:3306/itemlist
     url: jdbc:mariadb://localhost:3306/bootex
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: 1234
+
 
 
   jpa:
@@ -17,6 +23,7 @@ spring:
       hibernate:
         #        show_sql: true
         format_sql: true
+    defer-datasource-initialization: true
 
 logging.level:
   org.hibernate.SQL: debug
