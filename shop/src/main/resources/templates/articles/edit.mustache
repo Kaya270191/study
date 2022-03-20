@@ -6,7 +6,11 @@
 <!--/articles/create 여기로 폼 정보를 던질거야-->
 
 {{#article}}
-<form class="container" action="" method="post">
+<!--    action 어디로 보내는지 /  method 어떻게 보내는지  //form 은 get, post 만 지원함-->
+
+<form class="container" action="/articles/update" method="post">
+<!--    article의 id값을 숨겨서 던짐-->
+    <input name="id" type="hidden" value="{{id}}" />
     <div class="mb-3">
         <label class="form-label">제목</label>
         <input type="text" class="form-control" name="title" value="{{title}}">

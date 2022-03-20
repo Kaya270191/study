@@ -9,10 +9,12 @@ import lombok.ToString;
 @ToString //투스트링
 public class ArticleForm {
 
+    private Long id; //update 위해 id 필드 추가
     private String title;
     private String content;
 
+    //id 필드 추가로 인한 toEntity() 코드변경
     public Article toEntity() {
-        return new Article(null, title, content);
+        return new Article(id, title, content);
     }
 }
