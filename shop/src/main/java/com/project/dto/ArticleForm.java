@@ -2,9 +2,13 @@ package com.project.dto;
 
 import com.project.entity.Article;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 //폼데이터가 던져주는 것을 받은 dto
+@NoArgsConstructor
+@Setter
 @AllArgsConstructor //생성자 
 @ToString //투스트링
 public class ArticleForm {
