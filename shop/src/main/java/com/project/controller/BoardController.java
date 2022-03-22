@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -88,6 +89,24 @@ public class BoardController {
         }
         //3: 수정 결과 리다이랙트
         return "redirect:/boards/" + boardEntity.getId();
+    }
+
+    //삭제
+    @GetMapping("/boards/{id}/delete") //deletemapping 이여야 하지만 getmapping 으로 받음
+    public String delete(@PathVariable Long id, RedirectAttributes rttr){ //url path에서 id를 가져온다. RedirectAttributes 는 삭제시에 메시지 띄어주려고
+        log.info("삭제 요청이 들어왔습니다!");
+
+        //1: 삭제 대상을 가져온다
+        Board target = boardRepository.findById(id).orElse(null);
+        log.info(target.toString());
+
+        //2: 대상을 DB 에서 삭제한다
+        if (target != null){
+            boardRepository.delete(target); //리파지토리가 제공하는 delete 메소드를 사용해서 삭제
+            rttr.addFlashAttribute("msg", "삭제가 완료되었습니다"); //articles 페이지에 메시지가 뜸
+        }
+        //3: 결과 페이지로 리다이렉트 한다
+        return "redirect:/boards"; // 목록으로 리다이렉트
     }
 
 }

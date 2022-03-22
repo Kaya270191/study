@@ -16,6 +16,7 @@
             <td>내용</td>
             <td>글쓴이</td>
             <td>조회수</td>
+            <td>등록일</td>
         </tr>
     </thread>
     <tbody>
@@ -25,15 +26,11 @@
         <td th:text="${board.content}"></td>
         <td th:text="${board.writer}"></td>
         <td th:text="${board.view_count}"></td>
+        <td th:text="${board.reg_date}"></td>
     </tr>
     </tbody>
 </table>
 
-<!--수정버튼-->
-<a href="/boards/${board.id}/edit" >수정</a>
-
-<!--삭제버튼-->
-<a href="/boards/${board.id}/delete" >삭제</a>
 
 <!--목록으로 돌아가는 버튼-->
 <a href="/boards" >게시판목록</a>
