@@ -22,7 +22,7 @@ public class BoardForm {
 
     private String content; //내용
     private int view_count; //조회수
-    private Date reg_date; //게시글 작성일자
+    private String reg_date; //게시글 작성일자
 
 
     public Board toEntity() {
