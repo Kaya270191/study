@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
@@ -76,9 +78,12 @@ public class BoardController {
     public String index(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         //1: 모든 Board 가져옴
 //        List<Board> BoardEntityList = boardRepository.findAll();
-            Page<Board> BoardEntityList = boardService.pageList(pageable);
+        Page<Board> BoardEntityList = boardService.pageList(pageable);
             //2: 가져온 Board 묶음을 뷰로 전달
         model.addAttribute("boardList", BoardEntityList);
+        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+        model.addAttribute("next", pageable.next().getPageNumber());
+        model.addAttribute("hasNext", BoardEntityList.hasNext()); model.addAttribute("hasPrev", BoardEntityList.hasPrevious());
 
         //3: 뷰 페이지를 설정
         return "/boards/index";
@@ -132,11 +137,4 @@ public class BoardController {
         //3: 결과 페이지로 리다이렉트 한다
         return "redirect:/boards"; // 목록으로 리다이렉트
     }
-
-
-
-
-
-
-
 }

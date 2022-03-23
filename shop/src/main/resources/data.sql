@@ -39,4 +39,9 @@ insert into board(id, content, reg_date, title, view_count, writer) values(18, '
 insert into board(id, content, reg_date, title, view_count, writer) values(19, '안녕하세요 반가워요','2015-06-06', '처음', 2, '아롱');
 insert into board(id, content, reg_date, title, view_count, writer) values(20, '빨리할래','2020-05-06', '이거좀', 2, '주니');
 insert into board(id, content, reg_date, title, view_count, writer) values(21, '싫은데','2021-04-06', '봐줘요', 1, '용');
-
+insert into board(id, content, reg_date, title, view_count, writer) values(22, '빨리할래','2020-05-06', '이거좀', 2, '주니');
+insert into board(id, content, reg_date, title, view_count, writer) values(23, '싫은데','2021-04-06', '봐줘요', 1, '용');
+insert into board(id, content, reg_date, title, view_count, writer) values(24, '연습입니다','2009-03-06', '연습', 3, '가영');
+insert into board(id, content, reg_date, title, view_count, writer) values(25, '안녕하세요 반가워요','2015-06-06', '처음', 2, '아롱');
+insert into board(id, content, reg_date, title, view_count, writer) values(26, '빨리할래','2020-05-06', '이거좀', 2, '주니');
+insert into board(id, content, reg_date, title, view_count, writer) values(27, '싫은데','2021-04-06', '봐줘요', 1, '용');

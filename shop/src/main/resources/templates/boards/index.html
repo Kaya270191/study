@@ -31,6 +31,11 @@
     </tbody>
 </table>
 
+    <div>
+        <a th:href="@{?page={num}(num=${previous})}" role="botton">이전</a>
+        <a th:href="@{?page={num}(num=${next})}" role="button">다음</a>
+    </div>
+
 
 <!--목록으로 돌아가는 버튼-->
 <a href="/boards" >게시판목록</a>

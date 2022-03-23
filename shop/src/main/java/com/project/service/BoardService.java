@@ -25,7 +25,6 @@ public class BoardService {
     }
 
     public Board show(Long id) {
-
         return boardRepository.findById(id).orElse(null);
     }
 
