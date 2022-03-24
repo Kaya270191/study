@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
@@ -27,4 +28,7 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Modifying
     @Query("update Board b set b.view_count = b.view_count + 1 where b.id =:id")
     int updateView(Long id);
+
+    //검색
+    List<Board> findByTitleContaining(String keyword);
 }

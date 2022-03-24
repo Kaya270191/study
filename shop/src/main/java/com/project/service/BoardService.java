@@ -68,6 +68,12 @@ public class BoardService {
 
     }
 
+    @Transactional //검색
+    public List<Board> search(String keyword){
+        List<Board> boardList = boardRepository.findByTitleContaining(keyword);
+        return boardList;
+    }
+
 
 
 

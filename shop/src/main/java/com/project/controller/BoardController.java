@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Slf4j
 @Controller
 public class BoardController {
@@ -137,4 +139,15 @@ public class BoardController {
         //3: 결과 페이지로 리다이렉트 한다
         return "redirect:/boards"; // 목록으로 리다이렉트
     }
+
+
+    //검색
+    @GetMapping("/boards/search")
+    public String search(String keyword, Model model){
+        List<Board> searchList = boardRepository.search(keyword);
+        model.addAttribute("searchList", searchList);
+        return null;
+    }
+
+
 }
