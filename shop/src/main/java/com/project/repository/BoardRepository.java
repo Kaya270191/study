@@ -1,6 +1,8 @@
 package com.project.repository;
 
 import com.project.domain.Board;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,10 +27,16 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Override
     ArrayList<Board> findAll();
 
+//    List<Board> findByTitleContaining(String keyword);
+//    //
+//    List<Board> search(String keyword);
+
     @Modifying
     @Query("update Board b set b.view_count = b.view_count + 1 where b.id =:id")
     int updateView(Long id);
 
     //검색
-    List<Board> findByTitleContaining(String keyword);
+    Page<Board> findByTitleContaining(String keyword, Pageable pageable);
+
+
 }

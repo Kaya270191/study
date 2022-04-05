@@ -27,7 +27,7 @@ public class Comment{
     private String nickname;
 
     @Column
-    private String body;
+    private String body; //댓글의 내용
 
     public static Comment createComment(CommentDto dto, Article article) {
         // 예외 발생

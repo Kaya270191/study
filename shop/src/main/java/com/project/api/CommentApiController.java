@@ -1,5 +1,6 @@
 package com.project.api;
 
+import com.project.annotation.RunningTime;
 import com.project.dto.CommentDto;
 import com.project.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,7 @@ public class CommentApiController {
 
 
     // 댓글 삭제
+    @RunningTime
     @DeleteMapping("/api/comments/{id}")
     public ResponseEntity<CommentDto> delete(@PathVariable Long id){
 

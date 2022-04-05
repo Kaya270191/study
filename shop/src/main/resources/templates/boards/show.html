@@ -39,10 +39,20 @@
 <!--삭제버튼-->
 <a href="#" th:href="@{/boards/{id}/delete(id=${board.id})}" >삭제</a>
 
+
+
+<div>
+    <!--    댓글 목록-->
+    {{>comments/_comments}}
+
+</div>
+
+
 <!--목록으로 돌아가는 버튼-->
 <a href="/boards" >게시판목록</a>
 <!--새글쓰기-->
 <a href="/boards/new" >새글쓰기</a>
+
 
 
 

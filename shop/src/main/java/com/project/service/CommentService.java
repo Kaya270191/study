@@ -5,14 +5,15 @@ import com.project.entity.Article;
 import com.project.entity.Comment;
 import com.project.repository.ArticleRepository;
 import com.project.repository.CommentRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class CommentService {
 
@@ -23,6 +24,7 @@ public class CommentService {
     private ArticleRepository articleRepository;
 
     public List<CommentDto> comments(Long articleId) {
+
 //        // 조회: 댓글 목록 조회
 //        List<Comment> comments = commentRepository.findByArticleId(articleId); //Comment 타입의 묶음으로 반환함
 //
@@ -59,6 +61,7 @@ public class CommentService {
         return CommentDto.createCommentDto(created);
 
 
+
     }
 
     @Transactional
@@ -73,6 +76,7 @@ public class CommentService {
         return CommentDto.createCommentDto(updated);
 
     }
+
 
     @Transactional
     public CommentDto delete(Long id) {

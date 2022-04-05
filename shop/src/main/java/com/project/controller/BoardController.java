@@ -92,8 +92,6 @@ public class BoardController {
     }
 
 
-
-
     @GetMapping("/boards/{id}/edit")
     public String edit(@PathVariable Long id, Model model){ //url path에서 id를 가져온다
         // 1: 수정할 데이터를 가져오기
@@ -143,10 +141,16 @@ public class BoardController {
 
     //검색
     @GetMapping("/boards/search")
-    public String search(String keyword, Model model){
-        List<Board> searchList = boardRepository.search(keyword);
+    public String search(String keyword, Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable){
+        Page<Board> searchList = boardService.search(keyword, pageable);
         model.addAttribute("searchList", searchList);
-        return null;
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+        model.addAttribute("next", pageable.next().getPageNumber());
+        model.addAttribute("hasNext", searchList.hasNext());
+        model.addAttribute("hasPrev", searchList.hasPrevious());
+
+        return "/boards/search";
     }
 
 
