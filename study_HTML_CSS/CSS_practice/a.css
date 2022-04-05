@@ -1,0 +1,19 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.male{
+    color: blue;
+}
+
+.female{
+    color: pink;
+}
+
+ul{
+    list-style: none;
+}
+
+#ceo{
+    background-color: blueviolet;
+}

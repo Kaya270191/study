@@ -1,0 +1,44 @@
+
+/* 셀렉터 - 꾸며줄 대상을 선택 */
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* 클래스 셀렉터 */
+
+.main{
+    color: red;
+}
+
+.sub{
+    color: blue;
+}
+
+/* 아이디 셀렉터 */
+#useless{
+    color: beige;
+    background-color: aqua;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* 전체선택 */
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* 내부선택: A 태그 중 li태그 선택*/
+ul li{
+    font-style: italic;
+}
+
+/* 동시 선택: A태그 중 class가 key인 것*/
+li.key{
+    color: blueviolet;
+}
+
+/* 상태별 선택 */
+li:hover{
+    background-color: darkgrey;
+    color: wheat;
+}
