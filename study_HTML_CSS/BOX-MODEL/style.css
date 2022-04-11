@@ -1,0 +1,48 @@
+h1{
+    font-size: 80px;
+    margin-left: 180px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+h1 span:nth-child(1){
+    color: aqua;
+}
+h1 span:nth-child(2){
+    color: red;
+}
+h1 span:nth-child(3){
+    color: violet;
+}
+h1 span:nth-child(4){
+    color: royalblue;
+}
+h1 span:nth-child(5){
+    color: pink;
+}
+h1 span:nth-child(6){
+    color: blanchedalmond;
+}
+
+input{
+    margin-left: 200px;
+    padding: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    width: 380px;
+}
+
+.bottom{
+    margin-top: 15px;
+}
+
+.bottom button{
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.bottom button:nth-child(1){
+    margin-left: 280px;
+}
